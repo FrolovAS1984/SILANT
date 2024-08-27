@@ -2,7 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import styles from './Main.module.css';
 import Home from './Home/Home.jsx';
 import AuthPage from './AuthPage/AuthPage';
-// import Reference from './Reference/Reference';
+import References from "./Home/References/References.jsx";
+
 
 function Main() {
 
@@ -12,6 +13,7 @@ function Main() {
                 <Routes>
                     <Route path={'/'} element={<Home />}/>
                     <Route path={'/login'} element={<AuthPage />}/>
+                    <Route path="/reference/:directoryName/:name" element={<References />} />
                 </Routes>
 
             </div>

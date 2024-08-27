@@ -1,0 +1,51 @@
+.reference {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: var(--dark-blue);
+  }
+
+.header {
+
+  margin: 20px;
+  font-size: 24px;
+}
+
+.description {
+  width: 80%;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.backButton {
+
+  background-color: var(--bright-red);
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+}
+
+@media (max-width: 1200px) {
+
+  .header {
+    margin: 20px;
+    font-size: 20px;
+  }
+
+  .description {
+
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+}

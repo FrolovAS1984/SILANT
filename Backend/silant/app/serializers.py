@@ -89,8 +89,8 @@ class MachineDetailedInfoSerializer(serializers.ModelSerializer):
                 (request.user.is_client and obj.ownership_info.client == request.user) or
                 (request.user.is_service_company and request.user in obj.ownership_info.service_companies.all())
         ):
-            return obj.ownership_info.client.company_name if obj.ownership_info.client else '-----'
-        return '-----'
+            return obj.ownership_info.client.company_name if obj.ownership_info.client else ''
+        return ''
 
     def get_consignee(self, obj):
         request = self.context.get('request', None)
@@ -99,8 +99,8 @@ class MachineDetailedInfoSerializer(serializers.ModelSerializer):
                 (request.user.is_client and obj.ownership_info.client == request.user) or
                 (request.user.is_service_company and request.user in obj.ownership_info.service_companies.all())
         ):
-            return obj.ownership_info.consignee if obj.ownership_info.consignee else '-----'
-        return '-----'
+            return obj.ownership_info.consignee if obj.ownership_info.consignee else ''
+        return ''
 
     def get_shipment_date(self, obj):
         request = self.context.get('request', None)
@@ -109,8 +109,8 @@ class MachineDetailedInfoSerializer(serializers.ModelSerializer):
                 (request.user.is_client and obj.ownership_info.client == request.user) or
                 (request.user.is_service_company and request.user in obj.ownership_info.service_companies.all())
         ):
-            return obj.ownership_info.shipment_date if obj.ownership_info.shipment_date else '-----'
-        return '-----'
+            return obj.ownership_info.shipment_date if obj.ownership_info.shipment_date else ''
+        return ''
 
     def get_operation_address(self, obj):
         request = self.context.get('request', None)
@@ -119,8 +119,8 @@ class MachineDetailedInfoSerializer(serializers.ModelSerializer):
                 (request.user.is_client and obj.ownership_info.client == request.user) or
                 (request.user.is_service_company and request.user in obj.ownership_info.service_companies.all())
         ):
-            return obj.ownership_info.operation_address if obj.ownership_info.operation_address else '-----'
-        return '-----'
+            return obj.ownership_info.operation_address if obj.ownership_info.operation_address else ''
+        return ''
 
     def get_configuration(self, obj):
         request = self.context.get('request', None)
@@ -129,8 +129,8 @@ class MachineDetailedInfoSerializer(serializers.ModelSerializer):
                 (request.user.is_client and obj.ownership_info.client == request.user) or
                 (request.user.is_service_company and request.user in obj.ownership_info.service_companies.all())
         ):
-            return obj.ownership_info.configuration if obj.ownership_info.configuration else '-----'
-        return '-----'
+            return obj.ownership_info.configuration if obj.ownership_info.configuration else ''
+        return ''
 
     def get_service_companies(self, obj):
         request = self.context.get('request', None)
@@ -141,8 +141,8 @@ class MachineDetailedInfoSerializer(serializers.ModelSerializer):
         ):
             return [company.company_name for company in
                     obj.ownership_info.service_companies.all()] if obj.ownership_info.service_companies.exists() else [
-                '-----']
-        return ['-----']
+                '']
+        return ['']
 
     class Meta:
         model = MachineBasicInfo
@@ -187,7 +187,7 @@ class ComplaintsSerializer(serializers.ModelSerializer):
     restoration_method = serializers.CharField(source='restoration_method.name', read_only=True)
 
     def get_service_companies(self, obj):
-        return [{'username': company.username, 'last_name': company.last_name} for company in
+        return [{'username': company.username, 'company_name': company.company_name} for company in
                 obj.machine.ownership_info.service_companies.all()]
 
     class Meta:

@@ -11,6 +11,7 @@ import './AuthTable.css';
 
 import AllInfoTable from "./AllInfoTable/AllInfoTable.jsx";
 import MaintenanceTable from "./MaintenanceTable/MaintenanceTable.jsx";
+import ComplaintsTable from "./ComplaintsTable/ComplaintsTable.jsx";
 
 function AuthTable () {
     const { user , loading , logout , checkAuthStatus } = useAuth ();
@@ -83,9 +84,9 @@ function AuthTable () {
                 <Tab eventKey="maintenance" title="ТО">
                     {key === 'maintenance' && <MaintenanceTable/>}
                 </Tab>
-                {/*<Tab eventKey="complaints" title="Рекламации">*/}
-                {/*    {key === 'complaints' && <ClaimsTab/>}*/}
-                {/*</Tab>*/}
+                <Tab eventKey="complaints" title="Рекламации">
+                    {key === 'complaints' && <ComplaintsTable/>}
+                </Tab>
             </Tabs>
         </div>
     );

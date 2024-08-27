@@ -2,6 +2,8 @@ import {useState , useEffect} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
+import {renderCell} from "../../../../../utils/formateData.js";
+
 function AllInfoTable () {
     const [data , setData] = useState ( [] );
     const [error , setError] = useState ( null );
@@ -65,21 +67,7 @@ function AllInfoTable () {
         } );
     };
 
-    const renderCell = (value) => {
-        if (value !== undefined && value !== null) {
-            // Проверяем, является ли значение датой в формате YYYY-MM-DD
-            const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-            if (datePattern.test(value)) {
-                // Разбиваем строку на части
-                const [year, month, day] = value.split('-');
-                // Возвращаем в формате DD.MM.YYYY
-                return `${day}.${month}.${year}`;
-            }
-            return value;  // Возвращаем значение, если это не дата
-        } else {
-            return '-----';
-        }
-    };
+
 
     return (
         <>
