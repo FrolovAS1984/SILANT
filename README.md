@@ -16,6 +16,8 @@ https://github.com/FrolovAS1984/SILANT.git
 
 -Перейдите в папку backend
 
+    cd .\Backend\
+
 -Создайте и активируйте виртуальное окружение
 
 -Установите зависимости:
@@ -23,6 +25,8 @@ https://github.com/FrolovAS1984/SILANT.git
     pip install -r requirements.txt
 
 -Перейдите в папку silant
+
+    cd .\silant\
 
 -Выполните миграции базы данных:
 
@@ -42,8 +46,7 @@ https://github.com/FrolovAS1984/SILANT.git
 
 -Перейдите в папку frontend:
 
-    cd ../frontend
-
+    cd .\Frontend\
 
 -Установите зависимости:
 
