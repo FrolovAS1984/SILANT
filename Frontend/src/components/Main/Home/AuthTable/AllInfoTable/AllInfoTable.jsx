@@ -2,7 +2,7 @@ import {useState , useEffect} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-import {renderCell} from "../../../../../utils/formateData.js";
+import {renderCell} from "../../../../../utils/formateData.jsx";
 
 function AllInfoTable () {
     const [data , setData] = useState ( [] );

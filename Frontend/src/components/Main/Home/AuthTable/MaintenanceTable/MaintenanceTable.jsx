@@ -1,7 +1,7 @@
 import {useState , useEffect} from 'react';
 import axios from 'axios';
 
-import {renderCell} from "../../../../../utils/formateData.js";
+import {renderCell} from "../../../../../utils/formateData.jsx";
 
 function MaintenanceTable () {
     const [data , setData] = useState ( [] );
@@ -146,7 +146,7 @@ function MaintenanceTable () {
                             <th>Наработка, м/час</th>
                             <th>№ заказ-наряда</th>
                             <th>Дата заказ-наряда</th>
-                            <th>Организация, проводившая ТО</th>
+                            <th>Организация, <br/> проводившая ТО</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -1,6 +1,6 @@
 import {useState , useEffect} from 'react';
 import axios from 'axios';
-import {renderCell} from "../../../../../utils/formateData.js";
+import {renderCell} from "../../../../../utils/formateData.jsx";
 
 function ComplaintsTable () {
     const [data , setData] = useState ( [] );
